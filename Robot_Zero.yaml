@@ -1,0 +1,45 @@
+%YAML:1.0
+# Camera Parameters. Adjust these values according to your camera calibration results.
+Camera.type: "PinHole"
+Camera.fx: 520.9            # Focal length in pixels along x-axis
+Camera.fy: 521.0            # Focal length in pixels along y-axis
+Camera.cx: 325.1            # Principal point x-coordinate
+Camera.cy: 249.7            # Principal point y-coordinate
+Camera.k1: 0.0              # Radial distortion coefficient k1
+Camera.k2: 0.0              # Radial distortion coefficient k2
+Camera.p1: 0.0              # Tangential distortion coefficient p1
+Camera.p2: 0.0              # Tangential distortion coefficient p2
+Camera.width: 1024          # Image width
+Camera.height: 576          # Image height
+Camera.fps: 20              # Frames per second
+Camera.RGB: 1               # 1: RGB camera, 0: Grayscale camera
+
+# Stereo Rectification Parameters. Only for stereo cameras.
+# Camera1.extrinsic.rotation: []
+# Camera1.extrinsic.translation: []
+
+# Stereo Camera Baseline. For stereo cameras, baseline is the distance between the two cameras in meters.
+# Camera.baseline: 0.1
+
+# Depth Map Parameters. Only for RGB-D cameras.
+# Camera.depthMapFactor: 5000
+
+# ORB Parameters
+ORBextractor.nFeatures: 1000          # Number of features to extract
+ORBextractor.scaleFactor: 1.2         # Scale factor between levels in the scale pyramid
+ORBextractor.nLevels: 8               # Number of levels in the scale pyramid
+ORBextractor.iniThFAST: 20            # Fast threshold
+ORBextractor.minThFAST: 7             # Minimum threshold
+
+# Viewer Parameters
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500
+
