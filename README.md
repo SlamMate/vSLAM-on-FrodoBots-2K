@@ -39,9 +39,6 @@ Pls, download the file run_video.py in the rep
 ```bash
 python run_video.py video -f /home/zhangqi/Documents/Library/YOLOX/exps/default/yolox_s.py -c /home/zhangqi/Documents/Library/YOLOX/yolox_s.pth --path /home/zhangqi/Downloads/output_rides_21/ride_38222_20240501013650/recordings/rgb.ts --save_result
 ```
-### 2.3 Produce the object detect the result of the merged video
-Pls, download the file run_video.py in the rep
-```bash
-python run_video.py video -f /home/zhangqi/Documents/Library/YOLOX/exps/default/yolox_s.py -c /home/zhangqi/Documents/Library/YOLOX/yolox_s.pth --path /home/zhangqi/Downloads/output_rides_21/ride_38222_20240501013650/recordings/rgb.ts --save_result
-```
+### 2.3 Get the video from ./YOLOX_outputs/yolox_s/vis_res/2024_07_07_21_30_59
+![Running in YOLOX](images/example_image1.png)
 ## 3. Depth Estimation(Use the Lite-Mono) as an example)
