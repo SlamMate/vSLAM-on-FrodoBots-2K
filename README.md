@@ -25,3 +25,5 @@ target_link_libraries(Robot_zero ${PROJECT_NAME})
 ./Examples/Monocular/Robot_Zero Vocabulary/ORBvoc.txt Examples/Monocular/Robot_zero.yaml /home/zhangqi/Downloads/output_rides_21/ride_38222_20240501013650
 ```
 ![Running in ORBSLAM3](images/example_image0.png)
+## 2. Object Detection(Use the YOLOX as an example)
+## 3. Depth Estimation(Use the Lite-Mono) as an example)
