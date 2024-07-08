@@ -41,4 +41,21 @@ python run_video.py video -f /home/zhangqi/Documents/Library/YOLOX/exps/default/
 ```
 ### 2.3 Get the video from ./YOLOX_outputs/yolox_s/vis_res/2024_07_07_21_30_59
 ![Running in YOLOX](images/example_image1.png)
-## 3. Depth Estimation(Use the Lite-Mono) as an example)
+## 3. Depth Estimation(Use the Lite-Mono as an example)
+### 3.1 Merge video frames
+The video frames in FrodoBots-2K are discrete, you need to merge them into a longer video.
+The merge_ts_files.sh would help you!!
+```bash
+mv merge_ts_file.sh /home/zhangqi/Downloads/output_rides_21/ride_38222_20240501013650
+chmod +x merge_ts_file.sh
+./merge_ts_file.sh
+```
+### 3.2 Estimating depth according to the result of the merged video
+Pls, download the file video_depth_prediction.py in the rep.
+And move the file to LiteMono/
+The model is 1024 x 320
+```bash
+python video_depth_prediction.py --video_path /home/zhangqi/Downloads/output_rides_21/ride_38222_20240501013650/recordings/rgb.ts --output_path output_video_depth.avi --load_weights_folder /home/zhangqi/Documents/Library/Lite-Mono/pretrained_model --model lite-mono8m
+```
+### 3.3 Get the video from LiteMono/
+![Running in LiteMono](images/example_image2.png)
