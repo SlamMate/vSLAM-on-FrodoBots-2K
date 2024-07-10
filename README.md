@@ -1,4 +1,3 @@
-```markdown
 # vSLAM on FrodoBots-2K
 FrodoBots-2K is an exciting dataset. We'll provide details on how to use it for visual SLAM. This toolkit accompanies our dataset paper, and we will keep updating it to make the process easier.
 
