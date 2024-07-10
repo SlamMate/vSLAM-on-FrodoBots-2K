@@ -1,5 +1,5 @@
 # vSLAM on FrodoBots-2K
-FrodoBots-2K is an exciting dataset. We'll provide details on how to use it for visual SLAM. This toolkit accompanies our dataset paper, and we will keep updating it to make the process easier.
+FrodoBots-2K is an exciting dataset. We'll provide details on how to use it for visual SLAM. This toolkit accompanies our dataset paper https://arxiv.org/abs/2407.05735v1, and we will keep updating it to make the process easier.
 
 ## 1. SLAM Setup (Using ORBSLAM3 as an Example)
 
@@ -96,5 +96,4 @@ To cite this work, please use the following reference in English:
       primaryClass={cs.RO},  
       url={https://arxiv.org/abs/2407.05735}  
 }
-```
 ```
