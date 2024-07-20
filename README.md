@@ -1,16 +1,31 @@
 # vSLAM on FrodoBots-2K
 FrodoBots-2K is an exciting dataset. We'll provide details on how to use it for visual SLAM. This toolkit accompanies our dataset paper https://arxiv.org/abs/2407.05735v1, and we will keep updating it to make the process easier.
-## 0. Want to do self-calibration?
-You are soooooo cool! Pls refer to the Calibration file fold to do that!
 
-You need to also refer to this URL to get THE TOKEN
-> https://github.com/frodobots-org/earth-rovers-sdk/tree/main
+markdown
+Copy code
+# vSLAM on FrodoBots-2K
+FrodoBots-2K is an exciting dataset. We'll provide details on how to use it for visual SLAM. This toolkit accompanies our dataset paper https://arxiv.org/abs/2407.05735v1, and we will keep updating it to make the process easier.
 
-Then you need to run your code!
-```bash
-pip install requirements.txt
-python auto_calibration.py
-```
+## Table of Contents
+- [vSLAM on FrodoBots-2K](#vslam-on-frodobots-2k)
+  - [1. SLAM Setup (Using ORBSLAM3 as an Example)](#1-slam-setup-using-orbslam3-as-an-example)
+    - [1.1 Download the Dataset](#11-download-the-dataset)
+    - [1.2 Calibration](#12-calibration)
+    - [1.3 Merge Video Frames](#13-merge-video-frames)
+    - [1.4 Modify CMakeLists.txt to Compile the New Calibration Model](#14-modify-cmakeliststxt-to-compile-the-new-calibration-model)
+    - [1.5 Run ORBSLAM3](#15-run-orbslam3)
+  - [2. Object Detection (Using YOLOX as an Example)](#2-object-detection-using-yolox-as-an-example)
+    - [2.1 Merge Video Frames](#21-merge-video-frames)
+    - [2.2 Produce Object Detection Results](#22-produce-object-detection-results)
+    - [2.3 Get the Resulting Video](#23-get-the-resulting-video)
+  - [3. Depth Estimation (Using Lite-Mono as an Example)](#3-depth-estimation-using-lite-mono-as-an-example)
+    - [3.1 Merge Video Frames](#31-merge-video-frames)
+    - [3.2 Estimate Depth](#32-estimate-depth)
+    - [3.3 Get the Resulting Video](#33-get-the-resulting-video)
+- [Real FrodoBots Deployments](#real-frodobots-deployments)
+  - [0. Want to Calibration？](#0-want-to-calibration)
+  - [1. Want to apply the vSLAM algorithm to it?(take ORBSLAM3 as an example)](#1-want-to-apply-the-vslam-algorithm-to-ittake-orbslam3-as-an-example)
+- [Citation](#citation)
 ## 1. SLAM Setup (Using ORBSLAM3 as an Example)
 
 ### 1.1 Download the Dataset
@@ -92,6 +107,20 @@ python video_depth_prediction.py --video_path /home/zhangqi/Downloads/output_rid
 Find the resulting video in `LiteMono/`.
 
 ![Running in LiteMono](images/example_image2.png)
+# Real FrodoBots Deployments
+## 0. Want to Calibration？
+You are soooooo cool! Pls refer to the Calibration file fold to do that!
+
+You need to also refer to this URL to get THE TOKEN
+> https://github.com/frodobots-org/earth-rovers-sdk/tree/main
+
+Then you need to run your code!
+```bash
+pip install requirements.txt
+python auto_calibration.py
+```
+## 1. Want to apply the vSLAM algorithm to it?(take ORBSLAM3 as an example)
+
 
 ### Citation
 To cite this work, please use the following reference in English:
