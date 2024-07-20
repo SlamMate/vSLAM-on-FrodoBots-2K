@@ -1,6 +1,16 @@
 # vSLAM on FrodoBots-2K
 FrodoBots-2K is an exciting dataset. We'll provide details on how to use it for visual SLAM. This toolkit accompanies our dataset paper https://arxiv.org/abs/2407.05735v1, and we will keep updating it to make the process easier.
+## 0. Want to do self-calibration?
+You are soooooo cool! Pls refer to the Calibration file fold to do that!
 
+You need to also refer to this URL to get THE TOKEN
+> https://github.com/frodobots-org/earth-rovers-sdk/tree/main
+
+Then you need to run your code!
+```bash
+pip install requirements.txt
+python auto_calibration.py
+```
 ## 1. SLAM Setup (Using ORBSLAM3 as an Example)
 
 ### 1.1 Download the Dataset
