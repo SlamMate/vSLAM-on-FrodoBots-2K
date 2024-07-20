@@ -79,9 +79,9 @@ def control_robot(linear, angular):
     requests.post('http://localhost:8000/control', headers=headers, json=payload)
 
 if __name__ == '__main__':
-    path_to_vocabulary = "path/to/ORBvoc.txt"
-    path_to_settings = "path/to/settings.yaml"
-    path_to_sequence = "path/to/sequence"  # Replace with the appropriate path
+    path_to_vocabulary = "./Vocabulary/ORBvoc.txt"
+    # Pls set your calibration file here
+    path_to_settings = "./Examples/Monocular/Robot_Zero.yaml.yaml"
 
     # Initialize ORB-SLAM3 system
     SLAM = ORB_SLAM3.System(path_to_vocabulary, path_to_settings, ORB_SLAM3.System.MONOCULAR, True)
