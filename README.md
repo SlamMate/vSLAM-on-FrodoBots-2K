@@ -115,7 +115,9 @@ pip install requirements.txt
 python auto_calibration.py
 ```
 ## 1. Want to apply the vSLAM algorithm to it?(take ORBSLAM3 as an example)
-
+```bash
+python Orbslam3_deployments.py
+```
 
 ### Citation
 To cite this work, please use the following reference in English:
