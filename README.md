@@ -106,10 +106,10 @@ Find the resulting video in `LiteMono/`.
 ## 0. Want to Calibration？
 You are soooooo cool! Pls refer to the Calibration file fold to do that!
 
-You need to also refer to this URL to get THE TOKEN
+You also need to refer to this URL to get THE TOKEN. You should buy the FrodoBots and ask their team about the TOKEN
 > https://github.com/frodobots-org/earth-rovers-sdk/tree/main
 
-Then you need to run your code!
+Then you need to run your code! We need to prepare a checkerboard grid to be fixed in front of the robot, and the robot will automatically perform the calibration and corresponding movements.
 ```bash
 pip install requirements.txt
 python auto_calibration.py
