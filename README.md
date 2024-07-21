@@ -57,6 +57,25 @@ Run ORBSLAM3 with the following command:
 
 ![Running in ORBSLAM3](images/example_image0.png)
 
+### 1.6 Evaluation Of ORBSLAM3
+We refer to the below rep to estimate the traj through GPS and Controlling data as the ground truth and save it in tum traj format.
+
+> https://github.com/catglossop/frodo_dataset/blob/master/convert_frodo_to_gnm_vGPS_and_rpm.py
+
+Firstly, You need to download the "traj_est_env.yaml" to prepare the environment.
+
+```bash
+conda env create --file traj_est_env.yaml
+conda activate traj_est
+```
+
+So, then u just download "gt_traj_est.py" in this rep to the fold "output_rides_21", and input follow command  
+```python
+python gt_traj_est.py --input_path ./ --output_path ./result --num_workers 4 --overwrite
+```
+
+The traj in ORBSLAM3 also is saved in TUM format, so u can use this command to evaluate the performance.
+
 ## 2. Object Detection (Using YOLOX as an Example)
 
 ### 2.1 Merge Video Frames
