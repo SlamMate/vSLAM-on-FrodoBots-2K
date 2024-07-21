@@ -9,6 +9,7 @@ FrodoBots-2K is an exciting dataset. We'll provide details on how to use it for 
     - [1.3 Merge Video Frames](#13-merge-video-frames)
     - [1.4 Modify CMakeLists.txt to Compile the New Calibration Model](#14-modify-cmakeliststxt-to-compile-the-new-calibration-model)
     - [1.5 Run ORBSLAM3](#15-run-orbslam3)
+    - [1.6 Eval The ORBSLAM3](#16-evaluation-of-orbslam3)
   - [2. Object Detection (Using YOLOX as an Example)](#2-object-detection-using-yolox-as-an-example)
     - [2.1 Merge Video Frames](#21-merge-video-frames)
     - [2.2 Produce Object Detection Results](#22-produce-object-detection-results)
