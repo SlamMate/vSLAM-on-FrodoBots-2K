@@ -1,18 +1,19 @@
 %YAML:1.0
 # Camera Parameters. Adjust these values according to your camera calibration results.
 Camera.type: "PinHole"
-Camera.fx: 520.9            # Focal length in pixels along x-axis
-Camera.fy: 521.0            # Focal length in pixels along y-axis
-Camera.cx: 325.1            # Principal point x-coordinate
-Camera.cy: 249.7            # Principal point y-coordinate
-Camera.k1: 0.0              # Radial distortion coefficient k1
-Camera.k2: 0.0              # Radial distortion coefficient k2
-Camera.p1: 0.0              # Tangential distortion coefficient p1
-Camera.p2: 0.0              # Tangential distortion coefficient p2
-Camera.width: 1024          # Image width
-Camera.height: 576          # Image height
-Camera.fps: 20              # Frames per second
-Camera.RGB: 1               # 1: RGB camera, 0: Grayscale camera
+Camera.fx: 202.9071306           # Focal length in pixels along x-axis
+Camera.fy: 202.60070246          # Focal length in pixels along y-axis
+Camera.cx: 240.53998103          # Principal point x-coordinate
+Camera.cy: 159.13487172          # Principal point y-coordinate
+Camera.k1: -0.25322708           # Radial distortion coefficient k1
+Camera.k2: 0.09491323            # Radial distortion coefficient k2
+Camera.p1: 0.00105667            # Tangential distortion coefficient p1
+Camera.p2: -0.00086968           # Tangential distortion coefficient p2
+Camera.k3: -0.01829326           # Radial distortion coefficient k3 (if needed)
+Camera.width: 1024               # Image width
+Camera.height: 576               # Image height
+Camera.fps: 20                   # Frames per second
+Camera.RGB: 1                    # 1: RGB camera, 0: Grayscale camera
 
 # Stereo Rectification Parameters. Only for stereo cameras.
 # Camera1.extrinsic.rotation: []
