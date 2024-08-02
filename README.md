@@ -123,7 +123,7 @@ Find the resulting video in `LiteMono/`.
 
 ![Running in LiteMono](images/example_image2.png)
 # Real FrodoBots Deployments
-## 0. Want to Calibration？
+## 0. Want to Calibrate？
 You are soooooo cool! Pls refer to the Calibration file fold to do that!
 
 You also need to refer to this URL to get THE TOKEN. You should buy the FrodoBots and ask their team about the TOKEN
