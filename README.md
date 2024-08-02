@@ -130,6 +130,9 @@ You also need to refer to this URL to get THE TOKEN. You should buy the FrodoBot
 > https://github.com/frodobots-org/earth-rovers-sdk/tree/main
 
 Then you need to run your code! We need to prepare a checkerboard grid to be fixed in front of the robot, and the robot will automatically perform the calibration and corresponding movements.
+
+But in the real world, you need more pictures to make the calibration accurate.
+
 ```bash
 pip install requirements.txt
 python auto_calibration.py
