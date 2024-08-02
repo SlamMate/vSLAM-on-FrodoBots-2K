@@ -131,14 +131,17 @@ You also need to refer to this URL to get THE TOKEN. You should buy the FrodoBot
 
 Then you need to run your code! We need to prepare a checkerboard grid to be fixed in front of the robot, and the robot will automatically perform the calibration and corresponding movements.
 
-But in the real world, you need more pictures to make the calibration accurate.
+But in the real world, you need more pictures to make the calibration accurate. So, u can use auto_calibration1.py to make the robot move randomly.
 
 ```bash
 pip install requirements.txt
-python auto_calibration.py
+python auto_calibration1.py
 ```
-
+Calibrated Image:
 ![Calibration](images/calibration1.png)
+
+Before Calibration:
+
 ![Calibration1](images/calibration2.png)
 
 ## 1. Want to apply the vSLAM algorithm to it?(take ORBSLAM3 as an example)
