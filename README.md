@@ -28,7 +28,7 @@ FrodoBots-2K is an exciting dataset. We'll provide details on how to use it for 
 Download the dataset from the following link: [FrodoBots-2K Dataset](https://huggingface.co/datasets/frodobots/FrodoBots-2K)
 
 ### 1.2 Calibration
-According to our experiments, the approximate calibration parameters are as specified in the file `Robot_Zero.yaml`. We have ordered the robot, but it will take some time for delivery.
+According to our experiments, the calibration parameters are as specified in the file `Robot_Zero.yaml`.
 
 ### 1.3 Merge Video Frames
 The video frames in FrodoBots-2K are discrete, so you need to merge them into a longer video. The script `merge_ts_files.sh` will help you:
