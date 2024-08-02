@@ -137,6 +137,10 @@ But in the real world, you need more pictures to make the calibration accurate.
 pip install requirements.txt
 python auto_calibration.py
 ```
+
+![Calibration](images/calibration1.png)
+![Calibration1](images/calibration2.png)
+
 ## 1. Want to apply the vSLAM algorithm to it?(take ORBSLAM3 as an example)
 ```bash
 python Orbslam3_deployments.py
