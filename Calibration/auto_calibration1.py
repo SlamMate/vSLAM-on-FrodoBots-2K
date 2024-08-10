@@ -43,13 +43,13 @@ def capture_screenshot(retries=3, delay=2):
         response = requests.get(url, headers=HEADERS)
         if response.status_code == 200:
             data = response.json()
-            if 'video_frame' in data and 'timestamp' in data:
+            if 'front_video_frame' in data and 'timestamp' in data:
                 # Decode the base64 image
-                image_data = base64.b64decode(data['video_frame'])
+                image_data = base64.b64decode(data['front_video_frame'])
                 timestamp = data['timestamp']
                 return image_data, timestamp
             else:
-                print("Invalid response format, 'video_frame' or 'timestamp' not found")
+                print("Invalid response format, 'front_video_frame' or 'timestamp' not found")
         else:
             print(f"Failed to get screenshot, status code: {response.status_code}")
             print("Response content:", response.content)
@@ -67,14 +67,24 @@ def save_image(image_data, timestamp):
         print("Invalid image data or timestamp, skipping save")
         return None
 
-    filename = f'screenshot_{timestamp}.jpg'
+    # Check the file format based on the first few bytes
+    if image_data[:2] == b'\xff\xd8':
+        file_extension = 'jpg'
+    elif image_data[:4] == b'\x89PNG':
+        file_extension = 'png'
+    else:
+        print("Unknown file format, skipping save")
+        return None
+
+    filename = f'screenshot_{timestamp}.{file_extension}'
     with open(filename, 'wb') as f:
         f.write(image_data)
     print(f'Saved {filename}')
     return filename
 
-def capture_images(movement_patterns):
+def capture_images(movement_patterns, chessboard_size):
     image_files = []
+    last_linear, last_angular = 0, 0
     
     for linear, angular in movement_patterns:
         # Send control command
@@ -85,8 +95,24 @@ def capture_images(movement_patterns):
         image_data, timestamp = capture_screenshot()
         # Save screenshot
         filename = save_image(image_data, timestamp)
+        
         if filename:
-            image_files.append(filename)
+            # Load the saved image to check for chessboard corners
+            img = cv2.imread(filename)
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            ret, corners = cv2.findChessboardCorners(gray, chessboard_size, None)
+            
+            if ret:
+                # If corners are found, add the image file and update the last movement
+                image_files.append(filename)
+                last_linear, last_angular = linear, angular
+            else:
+                # If corners are not found, move in the opposite direction
+                print(f"Chessboard corners not found in image {filename}. Reversing last movement.")
+                send_control_command(-last_linear, last_angular)
+                time.sleep(2)  # Wait for the robot to move
+                send_control_command(0, 0)  # Stop the robot
+            
         # Stop the robot
         send_control_command(0, 0)
         # Wait a bit before the next command
@@ -165,17 +191,17 @@ def main():
     ]
 
     # Load one image to get the frame size
-    frame_size = (480, 320)
+    frame_size = (1024, 576)
 
     # Chessboard size
     chessboard_size = (8, 6)
 
-    desired_accuracy = 0.01  # Desired calibration accuracy
+    desired_accuracy = 0.1  # Desired calibration accuracy
     achieved_accuracy = float('inf')  # Initialize achieved accuracy
 
     while achieved_accuracy > desired_accuracy:
         # Capture images with current movement patterns
-        image_files = capture_images(repeated_patterns)
+        image_files = capture_images(repeated_patterns, chessboard_size)
         # Perform camera calibration
         ret, mtx, dist, rvecs, tvecs, objpoints, imgpoints = calibrate_camera(image_files, chessboard_size, frame_size)
         if ret is None:
