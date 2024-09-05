@@ -21,6 +21,7 @@ FrodoBots-2K is an exciting dataset. We'll provide details on how to use it for 
 - [Real FrodoBots Deployments](#real-frodobots-deployments)
   - [0. Want to Calibration？](#0-want-to-calibration)
   - [1. Want to apply the vSLAM algorithm to it?(take ORBSLAM3 as an example)](#1-want-to-apply-the-vslam-algorithm-to-ittake-orbslam3-as-an-example)
+- [Advance exploration](#advance-exploration)
 - [Citation](#citation)
 ## 1. SLAM Setup (Using ORBSLAM3 as an Example)
 
@@ -148,7 +149,15 @@ Before Calibration:
 ```bash
 python Orbslam3_deployments.py
 ```
+### Advance exploration
+## More Accurate Calibration
+I tried the aruco chessboard to do more accurate calibration. This is hard as the OpenCV-python only provides normal calibration demos(I use the opencv4.10). So Opencv C++ have a more detailed demo.https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html
 
+The effect is not so good with longer computing time.
+## Agile control of robots
+refer to keyboard_control.py file. Sending the command every 0.5s.
+## Reducing the computational overhead of robot servers
+Just place the CHROME_EXECUTABLE_PATH="/usr/bin/google-chrome" with the /usr/bin/chromium-browser
 ### Citation
 To cite this work, please use the following reference in English:
 
