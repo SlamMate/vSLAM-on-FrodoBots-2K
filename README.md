@@ -149,7 +149,7 @@ Before Calibration:
 ```bash
 python Orbslam3_deployments.py
 ```
-### Advance exploration
+# Advance exploration
 ## More Accurate Calibration
 I tried the aruco chessboard to do more accurate calibration. This is hard as the OpenCV-python only provides normal calibration demos(I use the opencv4.10). So Opencv C++ have a more detailed demo.https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html
 
